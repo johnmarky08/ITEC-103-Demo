@@ -1,6 +1,6 @@
 ﻿namespace ITEC_103_Demo
 {
-    partial class frmDateTimePicker
+    partial class frmFileSystemWatcher
     {
         /// <summary>
         /// Required designer variable.
@@ -28,72 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
+            fswMain = new FileSystemWatcher();
+            lblState = new Label();
             btnBack = new Button();
-            dtpBirthday = new DateTimePicker();
-            button1 = new Button();
             btnNext = new Button();
+            ((System.ComponentModel.ISupportInitialize)fswMain).BeginInit();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F);
+            label1.Location = new Point(49, 76);
+            label1.Name = "label1";
+            label1.Size = new Size(189, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Watching State of Desktop:";
+            // 
+            // fswMain
+            // 
+            fswMain.EnableRaisingEvents = true;
+            fswMain.SynchronizingObject = this;
+            // 
+            // lblState
+            // 
+            lblState.AutoSize = true;
+            lblState.Location = new Point(105, 110);
+            lblState.Name = "lblState";
+            lblState.Size = new Size(75, 15);
+            lblState.TabIndex = 1;
+            lblState.Text = "No Changes.";
             // 
             // btnBack
             // 
             btnBack.Font = new Font("Segoe UI", 10F);
-            btnBack.Location = new Point(91, 169);
+            btnBack.Location = new Point(49, 156);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(80, 28);
-            btnBack.TabIndex = 8;
+            btnBack.TabIndex = 13;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
-            // dtpBirthday
-            // 
-            dtpBirthday.Location = new Point(82, 68);
-            dtpBirthday.Name = "dtpBirthday";
-            dtpBirthday.Size = new Size(200, 23);
-            dtpBirthday.TabIndex = 9;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.Control;
-            button1.Location = new Point(148, 106);
-            button1.Name = "button1";
-            button1.Size = new Size(69, 25);
-            button1.TabIndex = 10;
-            button1.Text = "Get Age";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // btnNext
             // 
-            btnNext.AllowDrop = true;
             btnNext.Font = new Font("Segoe UI", 10F);
-            btnNext.Location = new Point(189, 169);
+            btnNext.Location = new Point(147, 156);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(80, 28);
-            btnNext.TabIndex = 11;
-            btnNext.Text = "Next";
+            btnNext.TabIndex = 12;
+            btnNext.Text = "Exit";
             btnNext.UseVisualStyleBackColor = true;
             btnNext.Click += btnNext_Click;
             // 
-            // frmDateTimePicker
+            // frmFileSystemWatcher
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(374, 258);
-            Controls.Add(btnNext);
-            Controls.Add(button1);
-            Controls.Add(dtpBirthday);
+            ClientSize = new Size(290, 255);
             Controls.Add(btnBack);
-            Name = "frmDateTimePicker";
+            Controls.Add(btnNext);
+            Controls.Add(lblState);
+            Controls.Add(label1);
+            Name = "frmFileSystemWatcher";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "DateTimePicker - Demo";
+            Text = "FileSystemWatcher - Demo";
+            Load += frmFileSystemWatcher_Load;
+            ((System.ComponentModel.ISupportInitialize)fswMain).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private FileSystemWatcher fswMain;
+        private Label lblState;
         private Button btnBack;
-        private DateTimePicker dtpBirthday;
-        private Button button1;
         private Button btnNext;
     }
 }

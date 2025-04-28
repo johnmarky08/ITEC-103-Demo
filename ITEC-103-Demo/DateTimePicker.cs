@@ -25,11 +25,6 @@ namespace ITEC_103_Demo
             dgv.Show();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime birthday = dtpBirthday.Value;
@@ -45,6 +40,14 @@ namespace ITEC_103_Demo
             int seconds = (int)age.TotalSeconds % 60;
 
             MessageBox.Show($"You are {years} years, {months} months, {days} days, {hours} hours, {minutes} minutes, and {seconds} seconds old.");
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            frmDomainUpDown dud = new();
+
+            Close();
+            dud.Show();
         }
     }
 }
